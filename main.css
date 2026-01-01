@@ -1,0 +1,136 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.motto {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 5rem;
+    text-shadow: 0 0 5px 5px rgba(0,0,0,0.4);
+}
+
+
+
+.small{
+    font-size: 0.9rem;
+    margin-top: 5rem;
+}
+
+/* Gradient system: variables + utility classes
+   - Use the `.bg-gradient-N` classes on any block (or body) to switch gradients.
+   - Fallback `background-color` provided for older browsers.
+   - Gradients designed for good color harmony; adjust stops or angles as needed.
+*/
+:root {
+    /* Recommended gradients (polished palettes) */
+    --gradient-1: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%); /* deep navy -> blue */
+    --gradient-2: linear-gradient(120deg, #ff7a18 0%, #af002d 50%, #319197 100%); /* warm orange -> red -> teal */
+    --gradient-3: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%); /* cyan -> blue */
+    --gradient-4: linear-gradient(135deg, #7928ca 0%, #ff0080 100%); /* purple -> pink */
+    --gradient-fallback: #0f172a; /* neutral fallback color */
+}
+
+/* Apply a default gradient to the whole page. Change to --gradient-2/3/4 or add a class on <body> to swap. */
+body {
+    min-height: 100vh; /* ensure full-page coverage */
+    background-color: var(--gradient-fallback);
+    background-image: var(--gradient-1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Gradient utility classes - apply these to containers to override the background. */
+.bg-gradient-1 { background-image: var(--gradient-1); background-size: cover; background-attachment: fixed; }
+.bg-gradient-2 { background-image: var(--gradient-2); background-size: cover; background-attachment: fixed; }
+.bg-gradient-3 { background-image: var(--gradient-3); background-size: cover; background-attachment: fixed; }
+.bg-gradient-4 { background-image: var(--gradient-4); background-size: cover; background-attachment: fixed; }
+
+/* Accessibility helpers: improve text contrast against bright gradients */
+.text-on-gradient {
+    color: #ffffff; /* default; check contrast on a case-by-case basis */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Reduced-motion: no animated gradients currently, but keep accessibility in mind. */
+
+/* Notes:
+   - To switch the whole site to gradient 2, add `class="bg-gradient-2"` on the <body> element.
+   - For sections, place the class on that container, e.g. <section class="bg-gradient-4">.
+   - Test heading/link contrast and adjust text color or add a semi-opaque overlay if needed.
+*/
+
+.footer{
+    color: white;
+    padding: 60px 20px 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer-container{
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer h3,
+.footer h4{
+    margin-bottom: 12px;
+}
+
+.footer p{
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-links ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li{
+    margin-bottom: 8px;
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.8s;
+}
+
+.footer a:hover{
+    color: black;
+}
+
+.footer-social .social-icons a{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-bottom{
+    border-top: 1px solid black;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer-container{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-social .social-icons a{
+        display: inline-block;
+        margin: 0 10px;
+    }
+}
